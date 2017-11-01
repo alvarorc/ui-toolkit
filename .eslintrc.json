@@ -1,9 +1,13 @@
 {
-  "extends": "airbnb",
+  "extends": ["airbnb", "plugin:css-modules/recommended"],
+  "plugins": ["css-modules"],
   "rules": {
     "react/jsx-filename-extension": 0,
     "global-require": 0,
-    "import/no-dynamic-require": 0
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "css-modules/no-unused-class": [2, { "camelCase": true }],
+    "css-modules/no-undef-class": [2, { "camelCase": true }]
   },
   "env": {
     "browser": true,

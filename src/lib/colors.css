@@ -1,0 +1,10 @@
+.steel-blue {
+  background-color: #2185d0;
+  color: #fff;
+}
+
+.steel-blue:hover {
+  background-color: #1678c2;
+  color: #fff;
+  text-shadow: none;
+}
