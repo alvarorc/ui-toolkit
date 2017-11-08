@@ -26,10 +26,13 @@
   "devDependencies": {
     "autodll-webpack-plugin": "^0.2.1",
     "autoprefixer": "7.1.2",
+    "babel-cli": "^6.26.0",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "7.1.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-preset-react-app": "^3.0.2",
     "babel-preset-stage-2": "6.24.1",
     "babel-runtime": "6.26.0",
@@ -65,6 +68,7 @@
     "react-dom": "^15.6.1",
     "react-hot-loader": "3.1.1",
     "regenerator-runtime": "0.11.0",
+    "rimraf": "^2.6.2",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.5.9",
@@ -77,7 +81,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "precompile": "rimraf lib",
+    "compile": "BABEL_ENV=production ./node_modules/.bin/babel src/lib --out-dir lib --source-maps --plugins babel-plugin-add-module-exports,transform-es2015-modules-umd --ignore *spec.js,*test.js"
   },
   "dll": {
     "entry": {
