@@ -3,10 +3,14 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './styles.css';
 
-const Button = ({ children, primary }) => {
+const Button = ({ children, primary, onClick }) => {
   const buttonBaseClass = cn(primary ? styles.primary : styles.basic);
 
-  return <button className={buttonBaseClass}>{children}</button>;
+  return (
+    <button className={buttonBaseClass} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 Button.defaultProps = {
@@ -17,6 +21,7 @@ Button.defaultProps = {
 Button.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   primary: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 export default Button;

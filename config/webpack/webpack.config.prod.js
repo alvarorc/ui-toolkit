@@ -1,12 +1,7 @@
-const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const base = require('./webpack.config.base');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
-const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const paths = require('../paths');
 const getClientEnvironment = require('../env');
 const postcss = require('../postcss');
@@ -25,9 +20,6 @@ const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 const publicUrl = publicPath.slice(0, -1);
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl);
-
-// Read the dll configuration from package.json
-const dllConfig = require(paths.appPackageJson).dll || { entry: {} };
 
 // Assert this just to be safe.
 // Development builds of React are slow and not intended for production.

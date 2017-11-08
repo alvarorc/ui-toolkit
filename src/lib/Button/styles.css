@@ -17,7 +17,8 @@
   text-decoration: none;
   border-radius: 0.28571429rem;
   user-select: none;
-  transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+  transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease,
+    box-shadow 0.1s ease, background 0.1s ease;
   will-change: "";
 }
 

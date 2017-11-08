@@ -1,5 +1,6 @@
 {
   "extends": ["airbnb", "plugin:css-modules/recommended"],
+  "settings": { "import/resolver": { "node": { "paths": ["src"] } } },
   "plugins": ["css-modules"],
   "rules": {
     "react/jsx-filename-extension": 0,
@@ -7,7 +8,8 @@
     "import/no-dynamic-require": 0,
     "import/no-extraneous-dependencies": 0,
     "css-modules/no-unused-class": [2, { "camelCase": true }],
-    "css-modules/no-undef-class": [2, { "camelCase": true }]
+    "css-modules/no-undef-class": [2, { "camelCase": true }],
+    "react/require-default-props": 0
   },
   "env": {
     "browser": true,
@@ -16,5 +18,10 @@
   "globals": {
     "document": false,
     "windows": false
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
   }
 }

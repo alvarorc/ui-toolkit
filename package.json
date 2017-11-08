@@ -24,6 +24,8 @@
     "prop-types": "^15.6.0"
   },
   "devDependencies": {
+    "@storybook/addon-notes": "^3.2.14",
+    "@storybook/react": "^3.2.14",
     "autodll-webpack-plugin": "^0.2.1",
     "autoprefixer": "7.1.2",
     "babel-cli": "^6.26.0",
@@ -82,6 +84,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
+    "storybook": "start-storybook -p 9001 -c .storybook",
     "precompile": "rimraf lib",
     "compile": "BABEL_ENV=production ./node_modules/.bin/babel src/lib --out-dir lib --source-maps --plugins babel-plugin-add-module-exports,transform-es2015-modules-umd --ignore *spec.js,*test.js"
   },

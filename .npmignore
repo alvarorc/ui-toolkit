@@ -1,2 +1,3 @@
 # Ignore demo page when publish to npm
 /src/demo
+.storybook
