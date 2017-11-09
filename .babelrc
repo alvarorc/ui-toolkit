@@ -1,3 +1,31 @@
 {
-  "presets": ["react-app", "stage-2"]
+  "presets": ["react-app", "stage-2"],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "react-css-modules",
+          {
+            "webpackHotModuleReloading": true,
+            "generateScopedName": "[folder]__[local]___[hash:base64:5]",
+            "exclude": "node_modules"
+          }
+        ]
+      ]
+    },
+    "production": {
+      "plugins": [
+        "add-module-exports",
+        "transform-es2015-modules-umd",
+        [
+          "react-css-modules",
+          {
+            "generateScopedName": "[folder]__[local]___[hash:base64:5]",
+            "removeImport": true,
+            "exclude": "node_modules"
+          }
+        ]
+      ]
+    }
+  }
 }

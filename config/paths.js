@@ -48,6 +48,5 @@ module.exports = {
   servedPath: getServedPath(resolveApp('package.json')),
   // New paths for library
   appIndexJs: resolveApp('src/demo/index.js'),
-  appLibIndexJs: resolveApp('src/lib/index.js'),
-  appLibSrc: resolveApp('src/lib'),
+  appComponentsSrc: resolveApp('src/components'),
 };

@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withNotes } from '@storybook/addon-notes';
 
-import Button from '../lib/Button';
+import Button from '../../lib/Button';
+import './main.86126f47.css';
 
 storiesOf('Button', module)
   .add('with text', () => <button onClick={action('clicked')}>Hello Button</button>)

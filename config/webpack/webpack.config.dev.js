@@ -61,7 +61,7 @@ module.exports = merge(base, {
             options: {
               importLoaders: 1,
               modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
+              localIdentName: '[folder]--[local]___[hash:base64:5]',
               camelCase: true,
             },
           },

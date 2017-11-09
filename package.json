@@ -34,7 +34,9 @@
     "babel-jest": "20.0.3",
     "babel-loader": "7.1.1",
     "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-react-css-modules": "^3.3.2",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-plugin-transform-require-ignore": "^0.1.1",
     "babel-preset-react-app": "^3.0.2",
     "babel-preset-stage-2": "6.24.1",
     "babel-runtime": "6.26.0",
@@ -86,24 +88,17 @@
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "precompile": "rimraf lib",
-    "compile": "BABEL_ENV=production ./node_modules/.bin/babel src/lib --out-dir lib --source-maps --plugins babel-plugin-add-module-exports,transform-es2015-modules-umd --ignore *spec.js,*test.js"
+    "compile":
+      "BABEL_ENV=production ./node_modules/.bin/babel src/components --out-dir lib --source-maps --ignore *spec.js,*test.js"
   },
   "dll": {
     "entry": {
-      "vendor": [
-        "react",
-        "react-dom",
-        "lodash"
-      ]
+      "vendor": ["react", "react-dom", "lodash"]
     }
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
+    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
+    "setupFiles": ["<rootDir>/config/polyfills.js"],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
@@ -115,19 +110,10 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node"
-    ]
+    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx", "node"]
   }
 }

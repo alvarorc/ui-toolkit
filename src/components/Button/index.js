@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './styles.css';
+import './style.css';
 
 const Button = ({ children, primary, onClick }) => {
-  const buttonBaseClass = cn(primary ? styles.primary : styles.basic);
+  const buttonBaseClass = cn(primary ? 'primary' : 'basic');
 
   return (
-    <button className={buttonBaseClass} onClick={onClick}>
+    <button onClick={onClick} styleName={buttonBaseClass}>
       {children}
     </button>
   );

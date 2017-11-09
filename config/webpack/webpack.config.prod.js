@@ -3,7 +3,6 @@ const merge = require('webpack-merge');
 const base = require('./webpack.config.base');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const paths = require('../paths');
-const getClientEnvironment = require('../env');
 const postcss = require('../postcss');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -14,18 +13,6 @@ const publicPath = paths.servedPath;
 const shouldUseRelativeAssetPaths = publicPath === './';
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
-// `publicUrl` is just like `publicPath`, but we will provide it to our app
-// as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
-// Omit trailing slash as %PUBLIC_URL%/xyz looks better than %PUBLIC_URL%xyz.
-const publicUrl = publicPath.slice(0, -1);
-// Get environment variables to inject into our app.
-const env = getClientEnvironment(publicUrl);
-
-// Assert this just to be safe.
-// Development builds of React are slow and not intended for production.
-if (env.stringified['process.env'].NODE_ENV !== 'production') {
-  throw new Error('Production builds must have NODE_ENV=production.');
-}
 
 // Note: defined here because it will be used more than once.
 const cssFilename = 'static/css/[name].[contenthash:8].css';
@@ -45,7 +32,7 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
 module.exports = merge(base, {
   // Don't attempt to continue if there are any errors.
   bail: true,
-  entry: paths.appLibIndexJs,
+  entry: paths.appComponentsSrc,
   // We generate sourcemaps in production. This is slow but gives good results.
   // You can exclude the *.map files from the build during deployment.
   devtool: shouldUseSourceMap ? 'source-map' : false,
@@ -71,7 +58,7 @@ module.exports = merge(base, {
                   minimize: true,
                   camelCase: true,
                   sourceMap: shouldUseSourceMap,
-                  localIdentName: '[name]__[local]___[hash:base64:5]',
+                  localIdentName: '[folder]__[local]___[hash:base64:5]',
                 },
               },
               postcss,

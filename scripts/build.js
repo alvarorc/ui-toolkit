@@ -1,6 +1,6 @@
 /* eslint import/no-extraneous-dependencies: 0, prefer-destructuring: 0, no-console: 0 */
 // Do this as the first thing so that any code reading it knows the right env.
-process.env.BABEL_ENV = 'production';
+process.env.BABEL_ENV = 'development'; // use babel dev env to build css modules
 process.env.NODE_ENV = 'production';
 
 // Makes the script crash on unhandled rejections instead of silently
