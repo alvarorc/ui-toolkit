@@ -1,0 +1,31 @@
+.item {
+  font-size: 10px;
+  position: relative;
+  vertical-align: middle;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  outline: none;
+  flex: 0 0 auto;
+  user-select: none;
+  background: none;
+  padding: 0.92857143em 1.14285714em;
+  color: #a8a8a8;
+  transition: background 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
+}
+
+.item > img {
+  display: inline-block;
+  vertical-align: middle;
+  margin: -0.3em 0;
+  width: 2.5em;
+}
+
+.item:hover {
+  color: #fafafa;
+}
+
+.active {
+  color: #fafafa;
+}

@@ -1,0 +1,12 @@
+.group {
+  display: flex;
+  margin: 0;
+}
+
+.right {
+  margin-left: auto !important;
+}
+
+.left {
+  margin-right: auto !important;
+}

@@ -5,17 +5,16 @@
   "main": "build/index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.corp.globant.com:alvaro-rago/ui-toolkit.git"
+    "url": "https://github.corp.globant.com/alvaro-rago/ui-toolkit.git"
   },
   "author": "Alvaro Rago <alvaro.rago@globant.com>",
   "bugs": {
     "url": "https://github.corp.globant.com/alvaro-rago/ui-toolkit/issues"
   },
   "homepage": "https://github.corp.globant.com/alvaro-rago/ui-toolkit#readme",
-  "private": true,
   "license": "MIT",
   "engines": {
-    "npm": ">=4"
+    "npm": ">=6"
   },
   "peerDependencies": {
     "react": "^15.6.1",
@@ -89,7 +88,8 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "precompile": "rimraf lib",
     "compile":
-      "BABEL_ENV=production ./node_modules/.bin/babel src/components --out-dir lib --source-maps --ignore *spec.js,*test.js"
+      "BABEL_ENV=production ./node_modules/.bin/babel src/components --out-dir lib --source-maps --ignore *spec.js,*test.js",
+    "prepublish": "npm run compile"
   },
   "dll": {
     "entry": {
@@ -115,5 +115,8 @@
       "^react-native$": "react-native-web"
     },
     "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx", "node"]
+  },
+  "dependencies": {
+    "react-grid-system": "^3.1.0"
   }
 }

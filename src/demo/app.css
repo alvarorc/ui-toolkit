@@ -1,0 +1,12 @@
+:global(body) {
+  font-family: "Roboto", sans-serif;
+}
+
+.app {
+  height: 100vh;
+  margin-top: 60px;
+}
+
+.padded {
+  padding-top: 15px;
+}
