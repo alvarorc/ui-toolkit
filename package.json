@@ -12,7 +12,6 @@
     "url": "https://github.corp.globant.com/alvaro-rago/ui-toolkit/issues"
   },
   "homepage": "https://github.corp.globant.com/alvaro-rago/ui-toolkit#readme",
-  "private": true,
   "license": "MIT",
   "engines": {
     "npm": ">=6"
