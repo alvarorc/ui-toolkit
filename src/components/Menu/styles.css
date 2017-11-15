@@ -1,0 +1,21 @@
+.menu {
+  composes: dark-intense from "../colors.css";
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+}
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 101;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  height: 60px;
+  flex-direction: row;
+  align-items: center;
+}
