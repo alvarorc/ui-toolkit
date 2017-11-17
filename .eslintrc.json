@@ -9,7 +9,8 @@
     "import/no-extraneous-dependencies": 0,
     "css-modules/no-unused-class": [2, { "camelCase": true }],
     "css-modules/no-undef-class": [2, { "camelCase": true }],
-    "react/require-default-props": 0
+    "react/require-default-props": 0,
+    "import/prefer-default-export": 0
   },
   "env": {
     "browser": true,

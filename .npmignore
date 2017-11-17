@@ -2,3 +2,7 @@
 /src/demo
 /src/stories
 .storybook
+.babelrc
+.eslint*
+scripts
+public
