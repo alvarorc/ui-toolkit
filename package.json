@@ -14,7 +14,7 @@
   "homepage": "https://github.com/alvarorc/ui-toolkit#README.md",
   "license": "MIT",
   "engines": {
-    "npm": ">=6"
+    "npm": ">=8"
   },
   "dependencies": {
     "react": "^15.6.1",
