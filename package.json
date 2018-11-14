@@ -98,8 +98,9 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "precompile": "rimraf lib",
     "compile": "BABEL_ENV=production ./node_modules/.bin/babel src/components --out-dir lib --source-maps --ignore *spec.js,*test.js",
-    "semantic-release": "semantic-release",
-    "commit": "git-cz"
+    "semantic-release": "semantic-release pre && semantic-release post",
+    "commit": "git-cz",
+    "commitmsg": "validate-commit-msg"
   },
   "release": {
     "getLastRelease": "last-release-git"
