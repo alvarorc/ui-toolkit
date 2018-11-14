@@ -14,7 +14,7 @@ const Button = ({ children, primary, onClick }) => {
 };
 
 Button.defaultProps = {
-  children: 'Hello!!',
+  children: 'Hello',
   primary: false,
 };
 
