@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
-import Button from 'components/Button';
-import Menu from 'components/Menu';
+import Button from '../components/Button';
+import Menu from '../components/Menu';
 
 import './app.css';
 
